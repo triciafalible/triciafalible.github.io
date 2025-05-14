@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>All Dragon Ball Characters</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #F5F5DC;
+      font-family: sans-serif;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      background-color: #e76a24 !important;
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #F5F5DC !important;
+      font-weight: bold;
+    }
+
+    .card {
+      margin-bottom: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .pagination-controls {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .btn-page {
+      margin: 0 10px;
+    }
+
+    .card-img-top {
+      height: 250px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="A07/index.html">⬅ Back to Gallery</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <div class="row" id="character-list"></div>
+
+    <div class="pagination-controls">
+      <button class="btn btn-warning btn-page" onclick="prevPage()">⬅ Previous</button>
+      <span id="page-number" class="fw-bold"></span>
+      <button class="btn btn-warning btn-page" onclick="nextPage()">Next ➡</button>
+    </div>
+  </div>
+
+  <footer class="text-center py-4 mt-5" style="background-color:#fbbc42; color: #01080a;">
+    <div class="container-fluid mb-0">
+      <div class="text-align-center mt-4 mb-2">
+        <p>&copy; 2025 ISHA DevHub | Designed by: Patricia M. Falible</p>
+      </div>
+  </footer>
+
+  <script>
+    const characterColors = {
+      "goku": "#F47B20", "vegeta": "#1F1F7A", "gohan": "#7B1FA2", "piccolo": "#4CAF50",
+      "trunks": "#7986CB", "krillin": "#F57C00", "android18": "#90A4AE", "frieza": "#A052D1",
+      "cell": "#4CAF50", "majinbuu": "#F8BBD0", "broly": "#00FF00", "beerus": "#9575CD",
+      "whis": "#B3E5FC", "bulma": "#E91E63", "chichi": "#E57373", "tien": "#C5E1A5",
+      "yamcha": "#FF7043", "roshi": "#FFF176"
+    };
+
+    let characters = [];
+    let currentPage = 1;
+    const charactersPerPage = 4;
+
+    async function loadCharacters() {
+      const res = await fetch('https://dragonball-api.com/api/characters?limit=1000');
+      const data = await res.json();
+      characters = data.items ?? data;
+      displayCharacters();
+    }
+
+    function displayCharacters() {
+      var container = document.getElementById('character-list');
+      container.innerHTML = '';
+
+      var start = (currentPage - 1) * charactersPerPage;
+      var end = start + charactersPerPage;
+      var pageCharacters = characters.slice(start, end);
+
+      pageCharacters.forEach(character => {
+        var bgColor = characterColors[character.name.toLowerCase()] || '#cccccc';
+
+        var col = document.createElement('div');
+        col.className = 'col-12 col-sm-6-col-md-4 col-lg-3 mb-3';
+
+        col.innerHTML = `
+           <div class="container h-100 shadow-sm">
+          <div class="card h-100 shadow-sm">
+            <div class="p-2 text-center" style="background-color: ${bgColor};">
+              <img src="${character.image}" class="card-img-top rounded" alt="${character.name}">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><strong>Name: </strong>${character.name}</h5>
+              <p class="card-text"><strong>ID #: </strong> ${character.id || 'Unknown'}</p>
+              <p class="card-text"><strong>Race: </strong> ${character.race || 'Unknown'}</p>
+              <p class="card-text"><strong>Affiliation: </strong> ${character.affiliation || 'Unknown'}</p>
+              <p class="card-text"><strong>Ki: </strong> ${character.ki || 'Unknown'}</p>
+              <p class="card-text"><strong>MaxKi: </strong> ${character.maxKi || 'Unknown'}</p>
+              <p class="card-text"><strong>Gender: </strong> ${character.gender || 'Unknown'}</p>
+            </div>
+          </div>
+        `;
+        container.appendChild(col);
+      });
+
+      document.getElementById('page-number').innerText = `Page ${currentPage} of ${Math.ceil(characters.length / charactersPerPage)}`;
+    }
+
+    function nextPage() {
+      if (currentPage * charactersPerPage < characters.length) {
+        currentPage++;
+        displayCharacters();
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        displayCharacters();
+      }
+    }
+
+    window.onload = loadCharacters;
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

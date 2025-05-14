@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISHA DevHub</title>
+    <link rel="icon" href="images/logo.png" type="images/logo">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+        .title-section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 2rem;
+            text-align: center;
+            background-color: #FFB6C1;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .title-section h1 {
+            font-size: 2.75rem;
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+            color: #030203;
+            margin-bottom: 0.5rem;
+        }
+
+        .title-section h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: white;
+            font-style: italic;
+        }
+
+        h2 {
+            color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 2.75rem;
+            text-align: left;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: left;
+            margin-top: 4px;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-img-top {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            object-fit: cover;
+            height: 200px;
+        }
+
+        .card-title {
+            font-weight: 700;
+            color: #333;
+        }
+
+        .card-text {
+            color: #666;
+        }
+
+        .card-link {
+            color: #007bff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .card-link:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+    </style>
+
+    <script>
+        function showAboutOptions() {
+            document.getElementById("aboutOptions").style.display = "block";
+        }
+
+        function hideAboutOptions() {
+            document.getElementById("aboutOptions").style.display = "none";
+        }
+    </script>
+
+</head>
+
+<body style="background-color:#F5F5DC;">
+
+    <div class="container-fluid bg-body-tertiary shadow" style="margin: 0; padding: 0">
+        <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #00c8e2;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#" style="color: #131212;">ISHA DevHub</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#home" style="color: #131212;">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects" style="color: #131212">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about" style="color: #131212" onmouseover="showAboutOptions()"
+                                onmouseout="hideAboutOptions()">
+                                About Me
+                            </a>
+                            <div id="aboutOptions"
+                                style="position: absolute; background-color: white; border: 1px solid #ccc; display: none;">
+        </nav>
+    </div>
+
+    <div class="title-section" id="home" data-aos="fade-up" data-aos-duration="1000">
+        <h1>All About ISHA</h1>
+        <h2>Exploring code like a new world.</h2>
+    </div>
+
+    <div id="about" class="container rounded-5 mt-4 p-5" style="background-color: #FFD1DC;" data-aos="zoom-out"
+        data-aos-duration="1000">
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center mb-4 mb-md-0">
+                <img src="images/patricia.jpg" class="img-fluid img-thumbnail" alt="Isha" style="width: 300px;">
+            </div>
+            <div class="col-md-8 d-flex flex-column justify-content-center">
+                <h1 style="font-family: cursive; text-align: center; margin-bottom: 20px;">
+                    "Exploring code like a new world."
+                </h1>
+                <p class="text-start">
+                    A simple girl who once dreamed of studying Psychology, but ended up choosing a path she never
+                    imagined.
+                    Now, as an IT student, she's embracing the journey with no regrets, constantly learning and growing
+                    every day.
+                </p>
+
+                <div class="my-3">
+                    <button class="btn btn-primary w-100 text-start" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#personalInfo">
+                        Personal Information
+                    </button>
+
+                    <div class="collapse show mt-3" id="personalInfo">
+                        <div class="card card-body bg-light">
+                            <div class="mb-3">
+                                <label class="form-label">Full Name:</label>
+                                <input type="text" class="form-control" value="Patricia M. Falible" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Year and Section:</label>
+                                <input type="text" class="form-control" value="DIT 2-1" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Date of Birth:</label>
+                                <input type="text" class="form-control" value="April 20, 2004" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Place of Birth:</label>
+                                <input type="text" class="form-control" value="Talisay, Batangas" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Course/Program:</label>
+                                <input type="text" class="form-control" value="Diploma in Information Technology"
+                                    readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12" data-aos="fade-up" data-aos-duration="1000">
+        <h2 class="my-4" style="text-align: center; padding-left: 15px;">My Projects</h2>
+    </div>
+
+    <div class="container my-3" id="projects">
+        <div class="row g-4">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="card h-100 shadow-sm project-card">
+                    <img src="images/electronic device.png" class="card-img-top" alt="Device">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Existing Electronic Device</h5>
+                        <p class="card-text">Activity 4 / April 10, 2025</p>
+                        <a href="A04/index.html" class="mt-auto card-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="card h-100 shadow-sm project-card">
+                    <img src="images/romblonprovince.png" class="card-img-top" alt="Romblon">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Romblon Island Philippines</h5>
+                        <p class="card-text">Activity 5 / April 13, 2025</p>
+                        <a href="A05/" class="mt-auto card-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="card h-100 shadow-sm project-card">
+                    <img src="images/animegallery.png" class="card-img-top" alt="Anime Gallery">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Anime Characters Gallery</h5>
+                        <p class="card-text">Activity 6 / April 21, 2025</p>
+                        <a href="A06/index.html" class="mt-auto card-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="card h-100 shadow-sm project-card">
+                    <img src="images/dragon ball gallery.png" class="card-img-top" alt="DB Character Gallery">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Dragon Ball Characters API</h5>
+                        <p class="card-text">Activity 7 / April 30, 2025</p>
+                        <a href="A07/index.html" class="mt-auto card-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="py-4 mt-5" style="background-color: rgb(173, 216, 230); color: black; text-align: center;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="text-align-center mt-4 mb-5">
+                        <h5>Social Media</h5>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="mx-3">
+                                <a href="https://github.com/patriciafalible/patriciafalible.github.io" target="_blank"
+                                    class="text-white text-decoration-none">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                                        width="24" alt="GitHub">
+                                    <span class="ms-2" style="color: black;">GitHub</span>
+                                </a>
+                            </div>
+                            <div class="mx-3">
+                                <a href="https://www.facebook.com/tricia.falible.1" target="_blank"
+                                    class="text-white text-decoration-none">
+                                    <img src="images/fb icon.jpg" width="24" alt="Facebook">
+                                    <span class="ms-2" style="color: black;">Facebook</span>
+                                </a>
+                            </div>
+                            <div class="mx-3">
+                                <a href="mailto:faliblepatricia@gmail.com" target="_blank"
+                                    class="text-white text-decoration-none">
+                                    <img src="images/gmail icon.jpg" width="24" alt="Email">
+                                    <span class="ms-2" style="color: black;">Email</span>
+                                </a>
+                            </div>
+                            <div class="mx-3">
+                                <a href="https://www.instagram.com/fleurdeisha" target="_blank"
+                                    class="text-white text-decoration-none">
+                                    <img src="images/instagram icon.jpg" width="24" alt="Instagram">
+                                    <span class="ms-2" style="color: black;">Instagram</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-align-center mt-2 mb-2">
+                        <p>&copy; 2025 ISHA DevHub | Designed by: Patricia M. Falible
+                        </p>
+                    </div>
+                </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+</body>
+
+</html>
