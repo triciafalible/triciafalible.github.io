@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Explore Techverse Anime</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script>
+       
+        function changeButtonColor(button, color) {
+            button.style.backgroundColor = color;
+        }
+
+        function resetButtonColor(button) {
+            const originalColor = button.getAttribute('data-original-color');
+            button.style.backgroundColor = originalColor;
+        }
+
+
+        function toggleCardContent(card, show) {
+            const body = card.querySelector('.card-body');
+            if (show) {
+                body.style.display = 'block';
+            } else {
+                body.style.display = 'none';
+            }
+        }
+        function hoverCard(card) {
+            card.style.transform = "scale(1.05)";
+            card.style.boxShadow = "0px 8px 20px rgba(0, 0, 0, 0.3)";
+        }
+
+        function resetCard(card) {
+            card.style.transform = "scale(1)";
+            card.style.boxShadow = "0px 4px 10px rgba(0, 0, 0, 0.15)";
+        }
+
+        function goToMainPage() {
+            window.location.href = "https://patriciafalible.github.io/"
+        }
+
+        window.onload = function () {
+            const bgContainer = document.getElementById('bgContainer');
+            const gif = document.createElement('img');
+            gif.src = 'https://i.pinimg.com/originals/22/07/43/220743df7f831dce831375e9949a68c6.gif';
+            gif.alt = 'Anime GIF';
+            gif.style.width = '100%';
+            gif.style.height = '100%';
+            gif.style.objectFit = 'cover';
+            gif.style.position = 'absolute';
+            gif.style.top = '0';
+            gif.style.left = '0';
+            gif.style.zIndex = '1';
+            bgContainer.appendChild(gif);
+
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.setAttribute('data-original-color', button.style.backgroundColor);
+            });
+        };
+
+    </script>
+</head>
+
+<body style="margin: 0; padding: 0; background-color:#F5F5DC;">
+    <!-- First Container-->
+   <div class="container-fluid p-3" style="background-color:#FFB6C1">
+        <div class="text-center font-family-cursive">
+            <h1 style="color: white; margin-bottom: 15px; font-family: cursive; font-weight: bold;">TechVerse Anime</h1>
+        </div>
+    </div>
+
+    <!-- GIF with Text, full width -->
+    <div class="bg-img-container" id="bgContainer"
+        style="background-color: whitesmoke; padding: 50px 20px; width: 100vw; min-height: 500px; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden; color: white; margin-top: 0px; border-radius: 0;">
+        <div class="overlay-text"
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; padding: 10px; max-width: 90%; z-index: 2;">
+            <h1 style="color: white; margin-bottom: 15px; font-family: cursive; font-weight: bold;">Welcome to Techverse
+                Anime!
+            </h1>
+            <h3
+                style="color: white; margin-bottom: 10px; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: large;">
+                Dive into your favorite characters and the cosplayers who bring them to life and where simple coding
+                unlocks endless learning.</h3>
+        </div>
+
+        <!-- Button Container -->
+        <div class="btn-container"
+            style="display: flex; justify-content: center; gap: 20px; position: absolute; bottom: 20px; z-index: 3;">
+            <a href="#Gallery" class="btn btn-primary" onmouseover="changeButtonColor(this, '#0056b3')"
+                onmouseout="resetButtonColor(this)"
+                style="font-size: 16px; padding: 12px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; transition: background-color 0.3s ease;">Explore
+                Gallery</a>
+            <a href="#container-row" class="btn btn-secondary" onmouseover="changeButtonColor(this, '#5a6268')"
+                onmouseout="resetButtonColor(this)"
+                style="font-size: 16px; padding: 12px 20px; background-color: whitesmoke; color: black; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; transition: background-color 0.3s ease;">Show
+                and Meet Cosplayers</a>
+        </div>
+    </div>
+
+    <!-- Featured Anime Characters Section Below BG Container -->
+    <h3 class="text-left mt-4 ms-3" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif #333;">Featured
+        Anime
+        Characters</h3>
+    <p class=" text-align: left;  mt-2 ms-3" style="font-family: Helvetica, sans-serif; font-size: 16px; color: #666; ">
+        Discover iconic anime characters from your favorite series.
+    </p>
+
+    <!-- Card Section -->
+    <section id="Gallery" class="container mt-5">
+        <div class="row">
+            <!-- Card 1 to 16 -->
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+
+                    <img src="gojo.jpg" class="card-img-top img-fluid" alt="Gojo"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Satoru Gojo</h5>
+                        <p class="card-text">Series: Jujutsu Kaisen</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+
+                    <img src="tanjiro.jpg" class="card-img-top img-fluid" alt="Tanjiro"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Tanjiro Kamado</h5>
+                        <p class="card-text normal text">Series: Demon Slayer</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+
+                    <img src="akame.jpg" class="card-img-top img-fluid" alt="Image"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Akame</h5>
+                        <p class="card-text">Series: Akame Ga Kill!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+
+                    <img src="mikasa.jpg" class="card-img-top img-fluid" alt="Mikasa"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Mikasa Ackerman</h5>
+                        <p class="card-text">Series: Attack on titan</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat the structure for the remaining cards -->
+
+            <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+
+                    <img src="sailor moon.jpg" class="card-img-top img-fluid" alt="SM"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Sailor Moon</h5>
+                        <p class="card-text">Series: Sailor Moon</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continue for the other cards... -->
+            <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+
+                    <img src="killua.jpg" class="card-img-top img-fluid" alt="Killua"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Killua Zoldyck</h5>
+                        <p class="card-text">Series: Hunter x Hunter</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+
+                    <img src="ron.jpg" class="card-img-top img-fluid" alt="Ron"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Ron Kamonohashi</h5>
+                        <p class="card-text">Series: Deranged Detective </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+
+                    <img src="nezuko.jpg" class="card-img-top img-fluid" alt="Nezuko"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Nezuko Kamado</h5>
+                        <p class="card-text">Demon Slayer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+
+                    <img src="tetsuya.jpg" class="card-img-top img-fluid" alt="Kuroko"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Tetsuya Kuroko</h5>
+                        <p class="card-text">Series: Kuroko no Basket</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+
+                    <img src="taiga.jpg" class="card-img-top img-fluid" alt="Aisaka"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Taiga Aisaka</h5>
+                        <p class="card-text">Series: Toradora!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+
+                    <img src="zero two.jpg" class="card-img-top img-fluid" alt="Zero Two"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Zero Two</h5>
+                        <p class="card-text">Series: Darling in the Franxx</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+
+                    <img src="gon.jpg" class="card-img-top img-fluid" alt="Gon Freecs"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Gon Freecs</h5>
+                        <p class="card-text">Series: Hunter x Hunter</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+
+                    <img src="naruto.jpg" class="card-img-top img-fluid" alt="Naruto"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Naruto Uzumaki</h5>
+                        <p class="card-text">Series: Naruto: Shippuden</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+
+                    <img src="forger.jpg" class="card-img-top img-fluid" alt="Anya"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Anya Forger</h5>
+                        <p class="card-text">Series: Spy x Family</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+                    <img src="erza.jpg" class="card-img-top img-fluid" alt="Erza"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Erza Scarlet</h5>
+                        <p class="card-text">Series: Fairy Tail</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+                    <img src="yagami.jpg" class="card-img-top img-fluid" alt="Light Yagami"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Light Yagami</h5>
+                        <p class="card-text">Series: Death Note</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+                    <img src="itchigo.jpg" class="card-img-top img-fluid" alt="Itchigo"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Itchigo Kurosaki</h5>
+                        <p class="card-text">Series: Bleach</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+                    <img src="ran.jpg" class="card-img-top img-fluid" alt="Ran"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Ran Mouri</h5>
+                        <p class="card-text">Series: Detective Conan</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+                    <img src="asuna.jpg" class="card-img-top img-fluid" alt="Asuna"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Asuna Yuuki</h5>
+                        <p class="card-text">Series: Sword Art Online</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+                    <img src="kaito.jpg" class="card-img-top img-fluid" alt="Kaito Kid"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Kaito Kuroba</h5>
+                        <p class="card-text">Series: Detective Conan</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+                    <img src="https://i.pinimg.com/736x/1f/37/5a/1f375abd837c48de0235d2029d6f70dc.jpg"
+                        class="card-img-top img-fluid" alt="Conan" style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Conan Edogawa</h5>
+                        <p class="card-text">Series: Detective Conan</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+                    <img src="https://i.pinimg.com/736x/41/48/c7/4148c7e83d1a2c130f67d6c18dda8ba0.jpg"
+                        class="card-img-top img-fluid" alt="Nobara" style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Nobara Kugisaki</h5>
+                        <p class="card-text">Series: Jujutsu Kaisen</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+                    <img src="https://i.pinimg.com/736x/cc/a3/c3/cca3c3c9db22a0807e366539c6f05719.jpg"
+                        class="card-img-top img-fluid" alt="Levi" style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Levi Ackerman</h5>
+                        <p class="card-text">Series: Attack on Titan</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card" onmouseover="toggleCardContent(this, true)"
+                    onmouseout="toggleCardContent(this, false)">
+                    <img src="https://i.pinimg.com/736x/00/8e/d9/008ed9dec8bca964f8f1124f27836fc1.jpg"
+                        class="card-img-top img-fluid" alt="Nami" style="height: 300px; object-fit: cover;">
+                    <div class="card-body" style="display: block;">
+                        <h5 class="card-title">Nami</h5>
+                        <p class="card-text">Series: One Piece</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- Featured Anime Characters Section Below BG Container -->
+      <h3 class="text-center margin-bottom-5px"
+        style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif #161616;">Featured
+        Cosplayers</h3>
+    <h2 class="text-center margin-top-5px"
+        style="font-family: Helvetica, sans-serif; font-size: 16px; color: #424141; ">
+        Meet the talented artists who bring your favorite anime characters to life.</h2>
+
+    <!-- Other Gallery -->
+    <div class="container my-3">
+        <div class="row" id="container-row">
+        </div>
+    </div>
+
+    <section id="MeetCosplayers"></section>
+
+    <script>
+        var names = ["Miss Alodia", "Kai Nakamura", "Misa Chiang", "Alex Morgan"];
+        var pictures = ["alodia.jpg", "kai.jpg", "misa.jpg", "alex.jpg"];
+        var expertise = [
+            "Specializes in cosplaying anime and video game characters, crafting detailed costumes, and inspiring the cosplay community with her work.",
+            "Specializes in cosplaying characters such as Eren Yeager and Levi Ackerman from Attack on Titan, as well as Tanjiro Kamado from Demon Slayer.",
+            "Specializes in cosplaying iconic characters like Sailor Moon, Asuka Langley, and Miku Hatsune with captivating costumes and performances.",
+            "Specializes in cosplaying characters like Howl Pendragon, Gojo Satoru, and Killua Zoldyck, capturing their essence with stunning accuracy and passion."
+        ];
+
+        var rowElement = document.getElementById("container-row");
+
+        for (var i = 0; i < names.length; i++)
+            rowElement.innerHTML += `
+              <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                  <div class="card my-3 shadow rounded-5 overflow-hidden" 
+                       onmouseover="hoverCard(this)" 
+                       onmouseout="resetCard(this)" 
+                       style="transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                       
+                      <img src="${pictures[i]}" class="card-img-top" alt="">
+                      
+                      <div class="card-body">
+                          <h5 class="card-name">${names[i]}</h5>
+                          <p class="card-text">${expertise[i]}</p>
+                      </div>
+                  </div>
+              </div>
+              `;
+
+    </script>
+
+     <!-- Footer -->
+    <footer class="text-center py-4 mt-5" style="background-color: rgb(173, 216, 230); color: black;">
+        <div class="container">
+            <p>View More Projects:
+                <a href="https://patriciafalible.github.io/" class="text-primary" target="_blank">
+                    ISHA DevHub
+                </a>
+            </p>
+            <!-- Back to Main Page Link -->
+            <div class="text-center mt-4">
+                <a href="#" class="text-decoration-underline" style="font-weight: lighter; color: black"
+                    onclick="goToMainPage()">← Back to Main Page</a>
+            </div>
+            <div class="text-align-center mt-4 mb-2">
+
+                <p>&copy; 2025 ISHA DevHub | Designed by: Patricia M. Falible
+                </p>
+
+            </div>
+        </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
